@@ -9,6 +9,7 @@ interface Service{
 
 
 data class ServiceImpl(val source : String) : Service{
+
     override fun add(num1: Double, num2: Double): Double {
         return num1 + num2
     }
@@ -16,6 +17,12 @@ data class ServiceImpl(val source : String) : Service{
     override fun sub(num1: Double, num2: Double) : Double {
         return num1 - num2
     }
+
+     companion object{
+         fun staticMethod(){
+            println("hi i'm a static method")
+         }
+     }
 }
 
 class MethodInterceptor<T>(private val target: T) : InvocationHandler {
