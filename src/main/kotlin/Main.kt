@@ -37,7 +37,7 @@ class MethodInterceptor<T>(private val target: T) : InvocationHandler {
 
 }
 
-inline fun <reified T> createMethodProxy(target : T, itr : Class<T> ) : T{
+inline fun <reified T> createServiceProxy(target : T, itr : Class<T> ) : T{
     val proxy = Proxy.newProxyInstance(
         itr.classLoader,
         arrayOf(itr,),
@@ -50,7 +50,7 @@ inline fun <reified T> createMethodProxy(target : T, itr : Class<T> ) : T{
 
 fun main(args: Array<String>) {
     var service : Service = ServiceImpl("localhost")
-    service = createMethodProxy(service , Service::class.java)
+    service = createServiceProxy(service , Service::class.java)
 
     service.add(1.0,2.0)
     service.sub(10.0,2.0)
