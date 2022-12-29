@@ -49,8 +49,10 @@ inline fun <reified T> createServiceProxy(target : T, itr : Class<T> ) : T{
 
 
 fun main(args: Array<String>) {
-    var service : Service = ServiceImpl("localhost")
-    service = createServiceProxy(service , Service::class.java)
+    val service : Service = createServiceProxy(
+        ServiceImpl("localhost") ,
+        Service::class.java
+    )
 
     service.add(1.0,2.0)
     service.sub(10.0,2.0)
