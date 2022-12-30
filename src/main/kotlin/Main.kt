@@ -26,7 +26,7 @@ data class ServiceImpl(val source : String) : Service{
 }
 
 
-class ServiceFactory< out T0>(private val targetClass : Class<T0>){
+class ServiceFactory< out T0 : Any>(private val targetClass : Class<T0>){
 
     private val _params : MutableList<Any> = mutableListOf()
     private lateinit var _interfaces : Array<Class<*>>
@@ -50,10 +50,10 @@ class ServiceFactory< out T0>(private val targetClass : Class<T0>){
 
     }
 
-    private fun createServiceProxy(target: T0, interfaces: Array<Class<*>>): T0 {
+    private fun createServiceProxy(target: T0): T0 {
         return Proxy.newProxyInstance(
-            target!!::class.java.classLoader,
-            interfaces,
+            target::class.java.classLoader,
+            target::class.java.interfaces,
             MethodInterceptor(target)
         ) as T0
 
@@ -74,8 +74,8 @@ class ServiceFactory< out T0>(private val targetClass : Class<T0>){
         return createServiceProxy(
             targetClass.getConstructor(
                 *_params.map { it::class.java }.toTypedArray()
-            ).newInstance(*_params.toTypedArray()) ,
-            _interfaces)
+            ).newInstance(*_params.toTypedArray())
+        )
     }
 
 }
@@ -86,7 +86,6 @@ class ServiceFactory< out T0>(private val targetClass : Class<T0>){
 fun main(args: Array<String>) {
     val service : Service = ServiceFactory(ServiceImpl::class.java)
         .addParam("localhost")
-        .setInterfaces(arrayOf(Service::class.java))
         .build()
 
     service.add(1.0,2.0)

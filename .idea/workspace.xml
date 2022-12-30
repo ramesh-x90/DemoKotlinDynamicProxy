@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2888f9c5-cfaa-43c8-a53b-c35e12e95802" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -33,7 +36,7 @@
     "last_opened_file_path": "E:/PROJECTS/Kotlin/kotlinDynamicProxy",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.0",
+    "project.structure.side.proportion": "0.38500422",
     "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
@@ -59,7 +62,8 @@
       <option name="presentableId" value="Default" />
       <updated>1672293195967</updated>
       <workItem from="1672293198038" duration="1903000" />
-      <workItem from="1672295254981" duration="5450000" />
+      <workItem from="1672295254981" duration="6960000" />
+      <workItem from="1672378449820" duration="1782000" />
     </task>
     <servers />
   </component>
